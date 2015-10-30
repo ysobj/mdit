@@ -1,14 +1,41 @@
 <!DOCTYPE html>
 <html>
-<head>
-<meta charset="UTF-8">
-<title>Markdown editor</title>
-</head>
-<body>
-<h1>Hello, electron!</h1>
-<form action="#">
-<input type="button" value="CLICK!" onClick="test()"/>
-</form>
-<script src="index.js"></script>
-</body>
+  <head>
+    <meta charset="UTF-8">
+    <title>Markdown editor</title>
+  </head>
+  <body>
+    <script>
+      var dojoConfig = {
+        async: true,
+        deps: [ 'app/main'],
+        has: {
+          "host-node": false
+        },
+        packages: [{
+          name: "dojo",
+          location: "lib/dojo"},
+        {
+          name: "app",
+          location: "../../app"
+        }
+        ]
+      };
+      window.electronRequire = require;
+      delete window.require;
+    </script>
+    <script src="lib/dojo/dojo.js"></script>
+    <script>
+      window.dojoRequire = require;
+      window.require = window.electronRequire;
+    </script>
+    <h1>Hello, electron!</h1>
+    <form action="#">
+      <input type="button" value="CLICK!"/>
+    </form>
+    <div class="hoge">
+      TEST test TEST
+    </div>
+    <script src="index.js"></script>
+  </body>
 </html>
