@@ -11,6 +11,7 @@ app.on('window-all-closed', function() {
   if (process.platform != 'darwin')
   app.quit();
 });
+var react = require('react');
 
 app.on('ready', function() {
 

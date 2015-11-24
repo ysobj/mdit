@@ -16,5 +16,11 @@
   "bugs": {
     "url": "https://github.com/ysobj/mdit/issues"
   },
-  "homepage": "https://github.com/ysobj/mdit#readme"
+  "homepage": "https://github.com/ysobj/mdit#readme",
+  "dependencies": {
+    "highlightjs": "^8.7.0",
+    "marked": "^0.3.5",
+    "react": "^0.14.1",
+    "react-dom": "^0.14.1"
+  }
 }
