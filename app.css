@@ -1,0 +1,14 @@
+.container{
+  display: flex;
+  width: 100%;
+}
+.editor{
+  width: 100%;
+  border-radius: 5px;
+  background: #1c73a5;
+}
+.preview{
+  width: 100%;
+  border-radius: 5px;
+  background: #fcf8e3;
+}
