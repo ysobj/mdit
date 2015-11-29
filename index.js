@@ -12,18 +12,17 @@ fs.readFile('./README.md', 'utf-8', function(err,text){
   editor.style.display="none";
 });
 fs.readdir('.',function(err,files){
+  console.log(files);
   var li = '';
   files.forEach(function(file){
-    if(file.indexOf('.') !== 0){
-      fs.stat(file, function(err,fsStat){
-        if(fsStat.isFile()){
-          li += '<li>' + file + '</li>';
-        }
-      });
+    if(file.charAt(0) !== '.'){
+      var fsStat = fs.statSync(file);
+      if(fsStat.isFile()){
+        li += '<li>' + file + '</li>';
+      }
     }
   });
   var t = document.querySelector('.fileList');
-  console.log(t,li);
   t.innerHTML = li;
 });
 document.querySelector(".previewTab").addEventListener('click',function(){
