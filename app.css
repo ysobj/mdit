@@ -1,6 +1,11 @@
 .container{
   display: flex;
   width: 100%;
+  flex-direction : column;
+}
+.vcontainer{
+  display: flex;
+  width: 100%;
 }
 .editor{
   width: 100%;
@@ -10,5 +15,13 @@
 .preview{
   width: 100%;
   border-radius: 5px;
+  background: #fcf8e3;
+}
+.editorTab{
+  border-radius: 5px 5px 0 0;
+  background: #1c73a5;
+}
+.previewTab{
+  border-radius: 5px 5px 0 0;
   background: #fcf8e3;
 }

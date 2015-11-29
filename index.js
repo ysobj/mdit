@@ -3,21 +3,34 @@
 var remote = require('remote');
 var fs = require('fs');
 var marked = require('marked');
-var x = document.querySelector(".editor");
-var y = document.querySelector(".preview");
-var z = document.querySelector("textarea");
+var editor = document.querySelector(".editor");
+var preview = document.querySelector(".preview");
 fs.readFile('./README.md', 'utf-8', function(err,text){
 //  document.write(marked(text));
-  z.value = text;
-  y.innerHTML = marked(text);
+  document.querySelector("textarea").value = text;
+  preview.innerHTML = marked(text);
+  editor.style.display="none";
 });
-x.addEventListener('click',function(){
-  console.log('x');
-  x.style.display="none";
-  y.style.display="block";
+fs.readdir('.',function(err,files){
+  var li = '';
+  files.forEach(function(file){
+    if(file.indexOf('.') !== 0){
+      fs.stat(file, function(err,fsStat){
+        if(fsStat.isFile()){
+          li += '<li>' + file + '</li>';
+        }
+      });
+    }
+  });
+  var t = document.querySelector('.fileList');
+  console.log(t,li);
+  t.innerHTML = li;
 });
-y.addEventListener('click',function(){
-  console.log('x');
-  y.style.display="none";
-  x.style.display="block";
+document.querySelector(".previewTab").addEventListener('click',function(){
+  editor.style.display="none";
+  preview.style.display="block";
+});
+document.querySelector(".editorTab").addEventListener('click',function(){
+  preview.style.display="none";
+  editor.style.display="block";
 });

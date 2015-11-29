@@ -6,10 +6,10 @@
     <link href="app.css" type="text/css" rel="stylesheet">
   </head>
   <body>
-    <div class="container">
+    <div class="vcontainer">
       <div class="filelist">
         <input type="search">
-        <ul>
+        <ul class="fileList">
           <li>test.css</li>
           <li>test.html</li>
           <li>test.md</li>
@@ -19,11 +19,16 @@
         </ul>
       </div>
       <div class="container">
-        <div class="editor">
-          <textarea></textarea>
+        <div>
+          <span class="editorTab">editor</span>
+          <span class="previewTab">preview</span>
         </div>
-        <div class="preview">
-          TEST test TEST 
+        <div>
+          <div class="editor">
+            <textarea></textarea>
+          </div>
+          <div class="preview">
+          </div>
         </div>
       </div>
     </div>
