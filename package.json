@@ -19,6 +19,7 @@
   "homepage": "https://github.com/ysobj/mdit#readme",
   "dependencies": {
     "highlightjs": "^8.7.0",
+    "kuromoji": "0.0.5",
     "marked": "^0.3.5",
     "react": "^0.14.1",
     "react-dom": "^0.14.1"

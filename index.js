@@ -11,21 +11,17 @@ var readFile = function(path){
     textarea.value = text;
     preview.innerHTML = marked(text);
     editor.style.display="none";
+    preview.style.display="block";
   });
 };
-fs.readFile('./README.md', 'utf-8', function(err,text){
-//  document.write(marked(text));
-  textarea.value = text;
-  preview.innerHTML = marked(text);
-  editor.style.display="none";
-});
+readFile('./README.md');
 fs.readdir('.',function(err,files){
   var li = '';
   files.forEach(function(file){
     if(file.charAt(0) !== '.'){
       var fsStat = fs.statSync(file);
       if(fsStat.isFile()){
-        li += '<li>' + file + '</li>';
+        li += '<li class=\'filelist\'>' + file + '</li>';
       }
     }
   });

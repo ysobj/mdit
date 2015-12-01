@@ -25,3 +25,8 @@
   border-radius: 5px 5px 0 0;
   background: #fcf8e3;
 }
+.filelist{
+  list-style-type: none;
+  background-color: aliceblue;
+  border-bottom: 1px solid #98BBDA;
+}
