@@ -34,3 +34,8 @@
   background-color: aliceblue;
   border-bottom: 1px solid #98BBDA;
 }
+.filelist :hover{
+  list-style-type: none;
+  background-color: #98BBDA;
+  border-bottom: 1px solid #98BBDA;
+}
