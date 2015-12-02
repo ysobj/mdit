@@ -16,7 +16,7 @@ var react = require('react');
 app.on('ready', function() {
 
   // ブラウザ(Chromium)の起動, 初期画面のロード
-  mainWindow = new BrowserWindow({width: 800, height: 600});
+  mainWindow = new BrowserWindow({width: 1200, height: 800, resizable: false});
   mainWindow.loadUrl('file://' + __dirname + '/index.html');
 
   mainWindow.on('closed', function() {
