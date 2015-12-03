@@ -6,12 +6,14 @@ var marked = require('marked');
 var editor = document.querySelector(".editor");
 var preview = document.querySelector(".preview");
 var textarea = document.querySelector("textarea");
+var currentFile = document.querySelector(".currentFile");
 var readFile = function(path){
   fs.readFile(path, 'utf-8', function(err,text){
     textarea.value = text;
     preview.innerHTML = marked(text);
     editor.style.display="none";
     preview.style.display="block";
+    currentFile.innerText = path;
   });
 };
 readFile('./README.md');
