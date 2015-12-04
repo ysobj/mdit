@@ -7,6 +7,10 @@ var editor = document.querySelector(".editor");
 var preview = document.querySelector(".preview");
 var textarea = document.querySelector("textarea");
 var currentFile = document.querySelector(".currentFile");
+var saveButton = document.querySelector("button");
+saveButton.addEventListener('click',function(e){
+  fs.writeFile(currentFile.innerText, textarea.value);
+});
 var readFile = function(path){
   fs.readFile(path, 'utf-8', function(err,text){
     textarea.value = text;
