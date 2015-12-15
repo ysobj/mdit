@@ -26,12 +26,12 @@ var readFile = function(path){
 };
 readFile('./README.md');
 fs.readdir('.',function(err,files){
-  var li = '';
+  var li = '<ul class="list-group"> <li class="list-group-header"> <input class="form-control" type="text" placeholder="Search for someone"> </li>';
   files.forEach(function(file){
     if(file.charAt(0) !== '.'){
       var fsStat = fs.statSync(file);
       if(fsStat.isFile()){
-        li += '<li class=\'filelist\'>' + file + '</li>';
+        li += '<li class="list-group-item"> <img class="img-circle media-object pull-left" src="/assets/img/avatar.jpg" width="32" height="32"> <div class="media-body"> <strong>' + file + '</strong> <p>Lorem ipsum dolor sit amet.</p> </div> </li>';
       }
     }
   });
